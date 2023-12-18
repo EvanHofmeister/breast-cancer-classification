@@ -32,5 +32,3 @@ if __name__ == "__main__":
     os.makedirs(model_dir, exist_ok=True)
     joblib_file = os.path.join(model_dir, "rf_model.joblib")
     dump(rf_model, joblib_file)
-    print("data_dir!!!!!", data_dir)
-    print("model_dir!!!!!", model_dir)

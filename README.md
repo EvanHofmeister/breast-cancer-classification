@@ -20,6 +20,9 @@ In this project, we conducted a comprehensive comparison of various machine lear
 
 Each method was meticulously implemented, tuned, and evaluated to determine its performance and practicality in medical diagnosis, offering a rich understanding of their capabilities and applications in this domain.
 
+### Dataset
+[The Breast Cancer Wisconsin (Diagnostic) dataset](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)), available from the UCI Machine Learning Repository, consists of features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. It contains 569 instances, each with 30 real-valued features, providing data on the characteristics of the cell nuclei. The objective of the dataset is to classify whether the breast cancer is benign or malignant.
+
 ### Instructions for setting up project and installing dependencies
 
 Install Pipenv: If you haven't installed Pipenv, you can do so using pip:
@@ -42,18 +45,52 @@ Jupyter Notebook can be started within the Pipenv using the following command
 jupyter notebook
 ```
 
-#### download_and_extract_zip(url, data_directory)
+
+### To train, optimize, create, and validate a random forest model, follow the below instructions:
+
+1) #### download_and_extract_zip(url, data_directory)
 
 Summary: Downloads and extracts a ZIP file from a specified URL to a data directory.
 ```sh
 python flask_app/download_extract_data.py
 ```
-#### split_and_save_data(data_file_path, base_data_directory, data_subdirectory)
+![Step1](references/images/Step1.png)
 
-Summary: Splits a dataset into training, validation, and testing sets, then saves them as CSV files.
+2) #### create_datasets()
+
+2Summary: Splits a dataset into training, validation, and testing sets, then saves them as CSV files.
 ```sh
 python flask_app/create_datasets.py
 ```
+![Step2](references/images/Step2.png)
+
+3) #### train_random_forest_model.py()
+
+Summary: Trains random forest model and optimizes parameters using grid search.
+```sh
+python train_random_forest_model.py
+```
+![Step3](references/images/Step3.png)
+![Confusion_Matrix](references/images/Confusion_Matrix.png)
+![AUC](references/images/AUC.png)
+4) #### predict.py()
+
+Summary: Host the service locally using the virtual environment using flask.
+```sh
+python predict.py
+```
+![Step4](references/images/Step4.png)
+
+5) #### random_forest_validation_flask.py(X, y, num_records)
+
+Summary: Sends a prediction request to a Flask API for a specified number of records.
+```sh
+python random_forest_validation_flask.py
+```
+![Step5](references/images/Step5.png)
+
+### Additional supporting py files
+
 #### train_model(model, param_grid, X_train, y_train, cv_folds)
 
 Summary: Trains a machine learning model using GridSearchCV for hyperparameter tuning.
@@ -66,15 +103,6 @@ Summary: Evaluates a trained model on the test set using various metrics, displa
 ```sh
 Example: evaluate_model(trained_model, X_test, y_test, "Random Forest", {})
 ```
-#### send_prediction_request(X, y, num_records)
-
-Summary: Sends a prediction request to a Flask API for a specified number of records.
-```sh
-Example: send_prediction_request(X_valid, y_valid, 10)
-```
-
-you should see something like this when running 'random_forest_validation_flask.py':
-![Validation](references/images/validation_example.png)
 
 ### Optimization
 
