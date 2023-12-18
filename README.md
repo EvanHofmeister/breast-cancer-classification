@@ -4,6 +4,8 @@
 # **Project Overview**
 This project applies machine learning (ML) techniques to the Breast Cancer Wisconsin dataset for cancer diagnosis, inspired by "Machine learning in medicine: a practical introduction" by Sidey-Gibbons and Sidey-Gibbons. The study highlights the utility of ML in healthcare, specifically in predictive modeling for cancer. Utilizing General Linear Model (GLM) regression, Support Vector Machines (SVMs), and Artificial Neural Networks (ANNs), the project aims to demonstrate the effectiveness of ML algorithms in medical diagnosis and outcome prediction. Emphasizing the importance of open-source tools and public data, this project serves as an example of leveraging ML to enhance medical research and clinical care.
 
+
+#### Introduction of machine learning methods
 In this project, we conducted a comprehensive comparison of various machine learning methods to address a classification problem using the Breast Cancer Wisconsin dataset. The aim was to evaluate and understand the effectiveness and suitability of each method for medical diagnosis prediction tasks.
 
 Logistic Regression: A fundamental linear model used for binary classification. It's valued for its simplicity, interpretability, and efficiency, making it a good baseline model for this study.
