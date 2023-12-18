@@ -30,6 +30,6 @@ def split_and_save_data(data_file_path, base_data_directory, data_subdirectory):
     print("Data split and saved.")
 
 if __name__ == "__main__":
-    base_data_directory = os.path.abspath(os.path.join(os.getcwd(), '..', 'data'))
+    base_data_directory = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data'))
     data_file_path = os.path.join(base_data_directory, 'wdbc.data')
     split_and_save_data(data_file_path, base_data_directory, 'processed_data')

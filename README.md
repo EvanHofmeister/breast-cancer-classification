@@ -5,7 +5,7 @@
 This project applies machine learning (ML) techniques to the Breast Cancer Wisconsin dataset for cancer diagnosis, inspired by "Machine learning in medicine: a practical introduction" by Sidey-Gibbons and Sidey-Gibbons. The study highlights the utility of ML in healthcare, specifically in predictive modeling for cancer. Utilizing General Linear Model (GLM) regression, Support Vector Machines (SVMs), and Artificial Neural Networks (ANNs), the project aims to demonstrate the effectiveness of ML algorithms in medical diagnosis and outcome prediction. Emphasizing the importance of open-source tools and public data, this project serves as an example of leveraging ML to enhance medical research and clinical care.
 
 
-#### Introduction of machine learning methods
+### Introduction of machine learning methods
 In this project, we conducted a comprehensive comparison of various machine learning methods to address a classification problem using the Breast Cancer Wisconsin dataset. The aim was to evaluate and understand the effectiveness and suitability of each method for medical diagnosis prediction tasks.
 
 * Logistic Regression: A fundamental linear model used for binary classification. It's valued for its simplicity, interpretability, and efficiency, making it a good baseline model for this study.
@@ -20,17 +20,39 @@ In this project, we conducted a comprehensive comparison of various machine lear
 
 Each method was meticulously implemented, tuned, and evaluated to determine its performance and practicality in medical diagnosis, offering a rich understanding of their capabilities and applications in this domain.
 
+### Instructions for setting up project and installing dependencies
+
+Install Pipenv: If you haven't installed Pipenv, you can do so using pip:
+```sh
+pip install pipenv
+```
+
+Install Dependencies: Install your project's dependencies with Pipenv,
+```sh
+pipenv install
+```
+
+Activate the Pipenv Environment:
+```sh
+pipenv shell
+```
+
+Jupyter Notebook can be started within the Pipenv using the following command
+```sh
+jupyter notebook
+```
+
 #### download_and_extract_zip(url, data_directory)
 
 Summary: Downloads and extracts a ZIP file from a specified URL to a data directory.
 ```sh
-Example: download_and_extract_zip("http://example.com/data.zip", "data")
+python flask_app/download_extract_data.py
 ```
 #### split_and_save_data(data_file_path, base_data_directory, data_subdirectory)
 
 Summary: Splits a dataset into training, validation, and testing sets, then saves them as CSV files.
 ```sh
-Example: split_and_save_data("../data/wdbc.data", "../data", "split_data")
+python flask_app/create_datasets.py
 ```
 #### train_model(model, param_grid, X_train, y_train, cv_folds)
 
@@ -54,7 +76,7 @@ Example: send_prediction_request(X_valid, y_valid, 10)
 you should see something like this when running 'random_forest_validation_flask.py':
 ![Validation](references/images/validation_example.png)
 
-## Optimization
+### Optimization
 
 In the optimization of each machine learning model, specific parameters were selected to analyze with GridSearch:
 

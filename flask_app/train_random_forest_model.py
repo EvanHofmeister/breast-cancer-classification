@@ -14,7 +14,7 @@ def load_data(data_directory):
     return data
 
 if __name__ == "__main__":
-    data_dir = os.path.abspath(os.path.join(os.getcwd(), '..', 'data/processed_data'))
+    data_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data/processed_data'))
     data = load_data(data_dir)
     X_train, y_train = data['X_train'], data['y_train']
     X_test, y_test = data['X_test'], data['y_test']
@@ -27,7 +27,10 @@ if __name__ == "__main__":
     results_dict = {}
     evaluate_model(rf_model, X_test, y_test, "Random Forest", results_dict)
 
-    model_dir = os.path.abspath(os.path.join(os.getcwd(), '..', 'model'))
+    model_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'model'))
+
     os.makedirs(model_dir, exist_ok=True)
     joblib_file = os.path.join(model_dir, "rf_model.joblib")
     dump(rf_model, joblib_file)
+    print("data_dir!!!!!", data_dir)
+    print("model_dir!!!!!", model_dir)

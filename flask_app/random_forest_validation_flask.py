@@ -22,7 +22,7 @@ def send_prediction_request(X, y, num_records):
     return response.json()
 
 if __name__ == "__main__":
-    data_dir = os.path.abspath(os.path.join(os.getcwd(), '..', 'data/processed_data'))
+    data_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data/processed_data'))
     X_valid = load_data(data_dir, 'X_valid.csv')
     y_valid = load_data(data_dir, 'y_valid.csv')
 

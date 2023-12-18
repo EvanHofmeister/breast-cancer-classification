@@ -3,7 +3,7 @@ import requests
 import zipfile
 
 def download_and_extract_zip(url, data_directory):
-    base_data_directory = os.path.abspath(os.path.join(os.getcwd(), '..', data_directory))
+    base_data_directory = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', data_directory))
     if not os.path.exists(base_data_directory):
         os.makedirs(base_data_directory)
 
@@ -24,6 +24,6 @@ def download_and_extract_zip(url, data_directory):
         print(f"Failed to download. Status code: {response.status_code}")
 
 if __name__ == "__main__":
-    download_url = "<YOUR-DOWNLOAD-URL>"
+    download_url = "https://archive.ics.uci.edu/static/public/17/breast+cancer+wisconsin+diagnostic.zip"
     download_directory = "data"
     download_and_extract_zip(download_url, download_directory)
