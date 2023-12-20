@@ -39,21 +39,6 @@ There are 32 rows in the dataset where the first two are the index and target. T
 ### Results
 The best results were achieved with an optimized Random Forest model, yielding an AUC of `0.986` and an F1 score of `0.968`. This work not only demonstrates the potential of machine learning in healthcare but also provided hands-on experience with Scikit-learn and Flask, expanding my experience with both model development and application deployment.
 
-### Introduction of machine learning methods
-In this project, I conducted a survey comparison of various machine learning methods to address a classification problem using the Breast Cancer Wisconsin dataset. The aim was to evaluate and understand the effectiveness and suitability of each method for medical diagnosis prediction tasks.
-
-* Logistic Regression: A fundamental linear model used for binary classification. It's valued for its simplicity, interpretability, and efficiency, making it a good baseline model for this study.
-
-* Support Vector Machine (SVM): Renowned for its effectiveness in high-dimensional spaces, SVM is particularly adept at creating complex decision boundaries, even with limited data.
-
-* Random Forest: An ensemble method that builds multiple decision trees and merges their predictions. Known for its robustness, it's effective in handling overfitting and providing high accuracy.
-
-* XGBoost: An implementation of gradient boosted decision trees designed for speed and performance. XGBoost is celebrated for its scalability and effectiveness across a wide range of classification problems.
-
-* Artificial Neural Network (ANN): A deep learning method capable of capturing complex patterns in data. ANNs are highly flexible and can model intricate relationships, making them a powerful tool in predictive analytics.
-
-Each method was implemented, optimized, and evaluated to determine its performance and practicality in medical diagnosis, offering a rich understanding of their capabilities and applications in this domain.
-
 ### Instructions for setting up project and installing dependencies
 
 Install Pipenv: If you haven't installed Pipenv, you can do so using pip:
@@ -121,6 +106,7 @@ Purpose: Trains random forest model and optimizes parameters using grid search.
 python train_random_forest_model.py
 ```
 ![Step3](references/images/Step3.png)
+
 ![Confusion_Matrix](references/images/Confusion_Matrix.png)
 ![AUC](references/images/AUC.png)
 
@@ -173,6 +159,21 @@ docker run -it --rm -p 5000:5000 cancer_classification:latest
 
 Now feel free to refer to the instructions detailed in the earlier sections to interact with the model and flask application.
 
+### Introduction of machine learning methods
+In this project, I conducted a survey comparison of various machine learning methods to address a classification problem using the Breast Cancer Wisconsin dataset. The aim was to evaluate and understand the effectiveness and suitability of each method for medical diagnosis prediction tasks.
+
+* Logistic Regression: A fundamental linear model used for binary classification. It's valued for its simplicity, interpretability, and efficiency, making it a good baseline model for this study.
+
+* Support Vector Machine (SVM): Renowned for its effectiveness in high-dimensional spaces, SVM is particularly adept at creating complex decision boundaries, even with limited data.
+
+* Random Forest: An ensemble method that builds multiple decision trees and merges their predictions. Known for its robustness, it's effective in handling overfitting and providing high accuracy.
+
+* XGBoost: An implementation of gradient boosted decision trees designed for speed and performance. XGBoost is celebrated for its scalability and effectiveness across a wide range of classification problems.
+
+* Artificial Neural Network (ANN): A deep learning method capable of capturing complex patterns in data. ANNs are highly flexible and can model intricate relationships, making them a powerful tool in predictive analytics.
+
+Each method was implemented, optimized, and evaluated to determine its performance and practicality in medical diagnosis, offering a rich understanding of their capabilities and applications in this domain.
+
 ### Optimization
 
 In the optimization of each machine learning model, specific parameters were selected to analyze with GridSearch:
@@ -210,7 +211,7 @@ In the optimization of each machine learning model, specific parameters were sel
   Optimizer: Algorithm or method used to change the attributes of the neural network such as weights and learning rate to reduce losses.
   Each parameter plays a crucial role in the model's ability to learn from data, impacting its overall performance and accuracy.
 
-Future Work
+### Future Work
 * Integrate more advanced machine learning and deep learning models.
 * Conduct a more granular analysis of feature importance.
 * Expand analysis to clinical/more expansive datasets.
