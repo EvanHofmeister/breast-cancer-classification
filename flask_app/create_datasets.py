@@ -17,8 +17,16 @@ def split_and_save_data(data_file_path, base_data_directory, data_subdirectory):
     X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.3, random_state=42)
     X_valid, X_test, y_valid, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
 
+    ## Create dataframes for selected features (LASSO Method used, see EDA jupyter notebook for details)
+    lasso_selected_features = ['texture_1', 'area_1', 'area_2', 'radius_3', 'texture_3', 'perimeter_3', 'area_3', 'concavity_3']
+    # Define new dataframes based on selected features
+    X_train_selected = X_train[lasso_selected_features]
+    X_valid_selected = X_valid[lasso_selected_features]
+    X_test_selected = X_test[lasso_selected_features]
+
     dataframes = {'df': df, 'X_train': X_train, 'X_valid': X_valid, 'X_test': X_test,
-                  'y_train': y_train, 'y_valid': y_valid, 'y_test': y_test}
+                  'y_train': y_train, 'y_valid': y_valid, 'y_test': y_test,
+                  'X_train_selected': X_train_selected, 'X_valid_selected': X_valid_selected, 'X_test_selected': X_test_selected}
 
     data_subdirectory_path = os.path.join(base_data_directory, data_subdirectory)
     if not os.path.exists(data_subdirectory_path):

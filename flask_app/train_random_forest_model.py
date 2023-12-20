@@ -16,8 +16,8 @@ def load_data(data_directory):
 if __name__ == "__main__":
     data_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data/processed_data'))
     data = load_data(data_dir)
-    X_train, y_train = data['X_train'], data['y_train']
-    X_test, y_test = data['X_test'], data['y_test']
+    X_train, y_train = data['X_train_selected'], data['y_train']
+    X_test, y_test = data['X_test_selected'], data['y_test']
 
     rf_params = {
         # Define your parameter grid

@@ -23,7 +23,7 @@ def send_prediction_request(X, y, num_records):
 
 if __name__ == "__main__":
     data_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'data/processed_data'))
-    X_valid = load_data(data_dir, 'X_valid.csv')
+    X_valid = load_data(data_dir, 'X_valid_selected.csv')
     y_valid = load_data(data_dir, 'y_valid.csv')
 
     num_records = int(input("Enter the number of records to predict: "))
