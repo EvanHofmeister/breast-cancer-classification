@@ -26,10 +26,6 @@ There are 32 rows in the dataset where the first two are the index and target. T
 	i) symmetry 
 	j) fractal dimension ("coastline approximation" - 1)
 
-
-
-
-
 ### Methodology
 * Data Preprocessing: The dataset is cleaned and normalized and analyzed to capture any relationships between features/targets.
 * Feature Engineering: Key features are selected based on a survey of methods.
@@ -78,8 +74,6 @@ Remove virtual environment (on current folder):
 ```sh
 pipenv --rm
 ```
-
-
 
 ### To train, optimize, create, and validate a random forest model, follow the below instructions:
 
@@ -144,6 +138,11 @@ Example: evaluate_model(trained_model, X_test, y_test, "Random Forest", {})
 ### Deployment with Docker
 
 To deploy the project with the provided Docker container, fist start the Docker Daemon, then run the follow commands:
+
+Navigate to the correct directory:
+```sh
+cd ../breast-cancer-classification
+```
 
 Build the container:
 ```sh

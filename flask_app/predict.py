@@ -1,10 +1,17 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+import os
 
 app = Flask(__name__)
 
-model = joblib.load('../model/rf_model.joblib')
+# Check if running in Docker
+if os.environ.get('RUNNING_IN_DOCKER'):
+    model_path = 'model/rf_model.joblib'
+else:
+    model_path = '../model/rf_model.joblib'
+
+model = joblib.load(model_path)
 
 @app.route('/predict', methods=['POST'])
 def predict():
